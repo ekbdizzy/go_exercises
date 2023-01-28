@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 const PassStatus = "pass"
@@ -63,8 +64,23 @@ func isSorted(words []string) bool {
 	return true
 }
 
+func countLetters(str string) {
+	// Нам дана строка следующего вида
+	// “съешь ещё этих мягких французских булок, да выпей чаю”.
+	// Используя тип данных map посчитайте количество повторений символов в этой строке.
+	// В результате выведите на экран список символ - количество повторений.
+	str = strings.ReplaceAll(str, " ", "")
+	lettersCounter := map[string]int{}
+	for _, value := range str {
+		lettersCounter[string(value)]++
+	}
+	for key, value := range lettersCounter {
+		fmt.Printf("%v - %v\n", key, value)
+	}
+}
+
 func main() {
 	//showGenerateCheck()
-	words := []string{"c", "daddy", "format", "hello"}
-	fmt.Println(isSorted(words))
+	str := "съешь ещё этих мягких французских булок, да выпей чаю"
+	countLetters(str)
 }
