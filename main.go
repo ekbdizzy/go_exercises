@@ -47,11 +47,16 @@ func hasSameValues(nums []int) bool {
 	return false
 }
 
+func isSorted(words []string) bool {
+	// Вам дан слайс состоящий из строк.
+	// Необходимо напечатать true тогда и только тогда,
+	// когда все слова в слайсе отсортированы лексикографически
+	// относительно друг друга.
+
+	return true
+}
+
 func main() {
 	//showGenerateCheck()
-	nums := []int{1, 2, 3, 4, 5, 5}
-	fmt.Println(hasSameValues(nums))
 
-	nums = []int{1, 2, 3, 4, 5, 6}
-	fmt.Println(hasSameValues(nums))
 }
