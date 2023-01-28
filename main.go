@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 const PassStatus = "pass"
 const FailStatus = "fail"
@@ -31,6 +33,25 @@ func showGenerateCheck() {
 	}
 }
 
+func hasTwice(nums []int) bool {
+	// Дан целочисленный массив nums, выведите на экран true,
+	// если любое значение встречается в массиве как минимум дважды,
+	// и false, если каждый элемент различен.
+	quantity := map[int]int{}
+	for _, value := range nums {
+		quantity[value]++
+		if quantity[value] > 1 {
+			return true
+		}
+	}
+	return false
+}
+
 func main() {
-	showGenerateCheck()
+	//showGenerateCheck()
+	nums := []int{1, 2, 3, 4, 5, 5}
+	fmt.Println(hasTwice(nums))
+
+	nums = []int{1, 2, 3, 4, 5, 6}
+	fmt.Println(hasTwice(nums))
 }
