@@ -52,11 +52,19 @@ func isSorted(words []string) bool {
 	// Необходимо напечатать true тогда и только тогда,
 	// когда все слова в слайсе отсортированы лексикографически
 	// относительно друг друга.
-
+	var length int = len(words)
+	for i, value := range words {
+		if i != length-1 {
+			if value > words[i+1] {
+				return false
+			}
+		}
+	}
 	return true
 }
 
 func main() {
 	//showGenerateCheck()
-
+	words := []string{"c", "daddy", "format", "hello"}
+	fmt.Println(isSorted(words))
 }
