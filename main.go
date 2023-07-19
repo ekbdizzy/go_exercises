@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// comment
 const PassStatus = "pass"
 const FailStatus = "fail"
 
